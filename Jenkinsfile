@@ -28,7 +28,7 @@ pipeline {
     stage('Deploy to UAT') {
       steps {
         echo "Deploying ${BRANCH_NAME} to TEST "
-        UiPathDeploy(packagePath: "Output\\${env.BUILD_NUMBER}", orchestratorAddress: "${UIPATH_ORCH_URL}", orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}", folderName: "${UIPATH_ORCH_FOLDER_NAME}", environments: 'DEV', credentials: UserPass(credentialsId: 'nx5QjC8ha6HQxYawEeSEhLRyikoBZJjvq0VzXe4XpPz3n'))
+        UiPathDeploy(packagePath: "Output\\${env.BUILD_NUMBER}", orchestratorAddress: "${UIPATH_ORCH_URL}", orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}", folderName: "${UIPATH_ORCH_FOLDER_NAME}", environments: 'DEV', credentials: UserPass(credentialsId: '2eb494b9ebd14accac559622e8f64cf0'))
       }
     }
 

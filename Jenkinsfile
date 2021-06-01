@@ -45,7 +45,7 @@ pipeline {
     UIPATH_ORCH_URL = 'https://grpuiappuat01.fwdasia.intranet/'
     UIPATH_ORCH_LOGICAL_NAME = 'devops_user'
     UIPATH_ORCH_TENANT_NAME = 'hklife'
-    UIPATH_ORCH_FOLDER_NAME = 'Default'
+    UIPATH_ORCH_FOLDER_NAME = 'TEST'
   }
   post {
     success {

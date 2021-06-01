@@ -28,7 +28,7 @@ pipeline {
     stage('Deploy to UAT') {
       steps {
         echo "Deploying ${BRANCH_NAME} to TEST "
-        UiPathDeploy(packagePath: "Output\\${env.BUILD_NUMBER}", orchestratorAddress: "${UIPATH_ORCH_URL}", orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}", folderName: "${UIPATH_ORCH_FOLDER_NAME}", environments: 'DEV', credentials: UserPass(credentialsId: 'I57_1WF2kI5CX4lmxjmH_KNxAKvzayWiZvwkNbzwJiLUZ'))
+        UiPathDeploy(packagePath: "Output\\${env.BUILD_NUMBER}", orchestratorAddress: "${UIPATH_ORCH_URL}", orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}", folderName: "${UIPATH_ORCH_FOLDER_NAME}", environments: 'DEV', credentials: UserPass('UAT_UiPath_Orchestrator'))
       }
     }
 
@@ -42,9 +42,9 @@ pipeline {
   environment {
     MAJOR = '1'
     MINOR = '0'
-    UIPATH_ORCH_URL = 'https://cloud.uipath.com/'
-    UIPATH_ORCH_LOGICAL_NAME = 'sunhome'
-    UIPATH_ORCH_TENANT_NAME = 'sunhomeDefault'
+    UIPATH_ORCH_URL = 'https://grpuiappuat01.fwdasia.intranet/'
+    UIPATH_ORCH_LOGICAL_NAME = 'devops_user'
+    UIPATH_ORCH_TENANT_NAME = 'hklife'
     UIPATH_ORCH_FOLDER_NAME = 'Default'
   }
   post {

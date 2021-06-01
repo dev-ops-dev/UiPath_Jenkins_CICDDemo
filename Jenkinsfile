@@ -28,7 +28,7 @@ pipeline {
     stage('Deploy to UAT') {
       steps {
         echo "Deploying ${BRANCH_NAME} to UAT "
-        UiPathDeploy(packagePath: "Output\\${env.BUILD_NUMBER}", orchestratorAddress: "${UIPATH_ORCH_URL}", orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}", folderName: "${UIPATH_ORCH_FOLDER_NAME}", environments: 'DEV', credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: '49B62823-8342-4ACA-A40B-D8741FB07178'))
+        UiPathDeploy(packagePath: "Output\\${env.BUILD_NUMBER}", orchestratorAddress: "${UIPATH_ORCH_URL}", orchestratorTenant: "${UIPATH_ORCH_TENANT_NAME}", folderName: "${UIPATH_ORCH_FOLDER_NAME}", environments: 'TEST', credentials: Token(accountName: "${UIPATH_ORCH_LOGICAL_NAME}", credentialsId: '49B62823-8342-4ACA-A40B-D8741FB07178'))
       }
     }
 
@@ -44,7 +44,7 @@ pipeline {
     MINOR = '0'
     UIPATH_ORCH_URL = 'https://grpuiappuat01.fwdasia.intranet/'
     UIPATH_ORCH_LOGICAL_NAME = 'devops_user'
-    UIPATH_ORCH_TENANT_NAME = 'hklife'
+    UIPATH_ORCH_TENANT_NAME = 'HKLife'
     UIPATH_ORCH_FOLDER_NAME = 'Default'
   }
   post {
